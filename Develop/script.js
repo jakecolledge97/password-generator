@@ -13,14 +13,24 @@ function writePassword() {
   function generatePassword(){
 
     //lets user choose how long the password can be
-    var passwordLength = prompt("How long would you like your password to be, between 8 and 128?")
     
+    var passwordLength = parseInt(prompt("How long would you like your password to be, between 8 and 128?"));
+    
+    //checks if passwordLength is a number
+    function checkPasswordString(){
+      if(isNaN(passwordLength)){
+        passwordLength = parseInt(prompt("Please choose a NUMBER between 8 and 128."));
+        checkPasswordString()
+      }
+    }
+    checkPasswordString()
     //checks if passwordLength is between 8-128
     function checkPasswordLength(){
       if(passwordLength < 8 || passwordLength > 128){
         passwordLength = prompt("Make sure the number you choose is between 8 and 128.")
         checkPasswordLength()
       }
+      
     }
     checkPasswordLength()
 
@@ -35,19 +45,28 @@ function writePassword() {
       //with symbols
       alphabetSymbols: "\"\\ !#$%&'()*+,-./:;<=>?@[]^_`{|}~"      
     }
-    var selection = ""
+    var selection = selectionHasOne();
     //password parameters
-    if(confirm("Do you want you password to contain letters?")){
-      selection += passwordOptions.alphabet
-    }
-    if(confirm("Do you want your password to contain capital letters?")){
-      selection += passwordOptions.alphabetCapital
-    }
-    if(confirm("Do you want your password to contain numbers?")){
-      selection += passwordOptions.alphabetNumbers
-    }
-    if(confirm("Do you want your password to contain symbols?")){
-      selection += passwordOptions.alphabetSymbols
+    function selectionHasOne(){
+      selection = ""
+      if(confirm("Do you want you password to contain lowercase letters?")){
+        selection += passwordOptions.alphabet
+      }
+      if(confirm("Do you want your password to contain capital letters?")){
+        selection += passwordOptions.alphabetCapital
+      }
+      if(confirm("Do you want your password to contain numbers?")){
+        selection += passwordOptions.alphabetNumbers
+      }
+      if(confirm("Do you want your password to contain symbols?")){
+        selection += passwordOptions.alphabetSymbols
+      }
+      //checks to see if you selected an option
+      if(selection === ""){
+        alert("You must select at least one option");
+        selectionHasOne()
+      }
+      return selection
     }
     var finalPassword = ""
     //Loop that adds letters to password
