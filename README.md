@@ -21,7 +21,7 @@ once all the criterea is met. The page should display a random password in the t
 
 Here is an screenshot of the full page.
 
-![Password Generator full page screenshot](Develop\images\fullpage.png)
+![Password Generator full page screenshot](.Develop\images\fullpage.png)
 
 Here is an example of the page asking for the length of the password and an error if criteria isn't met.
 
