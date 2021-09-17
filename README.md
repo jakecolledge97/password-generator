@@ -21,23 +21,23 @@ once all the criterea is met. The page should display a random password in the t
 
 Here is an screenshot of the full page.
 
-![Password Generator full page screenshot](.Develop\images\fullpage.png)
+![Password Generator full page screenshot](fullpage.png)
 
 Here is an example of the page asking for the length of the password and an error if criteria isn't met.
 
-![Password Generator password length prompt](Develop\images\error-prompt-length.png)
+![Password Generator password length prompt](error-prompt-length.png)
 
-![Password Generator password length error](Develop\images\error-prompt-length-2.png)
+![Password Generator password length error](error-prompt-length-2.png)
 
 Here is an example of the page prompting for symbols and an error if nothing is chosen.
 
-![Password Generator symbol prompt](Develop\images\symbols-prompt.PNG)
+![Password Generator symbol prompt](symbols-prompt.PNG)
 
-![Password Generator selection error](Develop\images\options-prompt-error.PNG)
+![Password Generator selection error](options-prompt-error.PNG)
 
 Here is an example of a generated password.
 
-![Password Generator with a generated password](Develop\images\fullpagewithpassword.png)
+![Password Generator with a generated password](fullpagewithpassword.png)
 
 
 ## To edit this projects repository
